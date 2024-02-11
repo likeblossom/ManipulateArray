@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+       // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9,10,11};
 
         System.out.println("Original array: " + Arrays.toString(array));
 
@@ -25,6 +25,7 @@ public class Main {
 
             // Determine the left and right halves based on array size
             int leftSize = 0, rightSize = 0;
+            int middle = (n/2)-1;
 
             if (n % 2 == 0) {
                 // Array is even
@@ -45,8 +46,8 @@ public class Main {
                     rightSize = Math.ceilDiv(n, 2);
                 } else {
                     // Leaving the middle element intact would result in both sides being odd
-                    leftSize = Math.ceilDiv(n, 2)+1;
-                    rightSize = Math.ceilDiv(n, 2)+2;
+                    leftSize = Math.ceilDiv(n, 2);
+                    rightSize = Math.ceilDiv(n, 2) + 1;
                 }
             }
 
