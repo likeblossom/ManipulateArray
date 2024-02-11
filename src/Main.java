@@ -2,7 +2,18 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+
+        // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
+
+       //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         System.out.println("Original array: " + Arrays.toString(array));
 
@@ -18,6 +29,7 @@ public class Main {
 
             // Determine the left and right halves based on array size
             int leftSize = 0, rightSize = 0;
+            int middle = (n/2)-1;
 
             if (n % 2 == 0) {
                 // Array is even
@@ -28,18 +40,18 @@ public class Main {
                 } else {
                     // Left and right halves are not even
                     leftSize = (n / 2) + 1;
-                    rightSize = n / 2;
+                    rightSize = (n / 2) + 1;
                 }
             } else {
                 // Array is odd
-                if (Math.ceilDiv(n, 2) % 2 == 0) {
+                if ((n/2) % 2 == 0) { // IF Array is odd AND both sides are EVEN
                     // Leaving the middle element intact would result in both sides being even
-                    leftSize = (n / 2) + 1;
-                    rightSize = n / 2;
+                    leftSize = Math.ceilDiv(n, 2); // Ceiling to ignore the middle value
+                    rightSize = leftSize;
                 } else {
                     // Leaving the middle element intact would result in both sides being odd
-                    leftSize = Math.ceilDiv(n, 2);
-                    rightSize = n / 2;
+                    leftSize = Math.ceilDiv(n, 2) + 1; // +1 to make the left side bigger
+                    rightSize = leftSize;
                 }
             }
 
@@ -49,7 +61,7 @@ public class Main {
             }
 
             // Modify the right half by changing the second element to the sum of the two elements
-            for (int i = leftSize; i < n - 1; i += 2) {
+            for (int i = rightSize; i < n - 1; i += 2) {
                 arr[i + 1] = arr[i] + arr[i + 1];
             }
         }
