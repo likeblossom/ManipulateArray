@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
 
-       // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9,10,11};
+       int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         System.out.println("Original array: " + Arrays.toString(array));
 
@@ -43,11 +43,11 @@ public class Main {
                 if ((n/2) % 2 == 0) {
                     // Leaving the middle element intact would result in both sides being even
                     leftSize = Math.ceilDiv(n, 2);
-                    rightSize = Math.ceilDiv(n, 2);
+                    rightSize = leftSize;
                 } else {
                     // Leaving the middle element intact would result in both sides being odd
-                    leftSize = Math.ceilDiv(n, 2);
-                    rightSize = Math.ceilDiv(n, 2) + 1;
+                    leftSize = Math.ceilDiv(n, 2) + 2;
+                    rightSize = leftSize;
                 }
             }
 
