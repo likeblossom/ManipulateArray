@@ -3,13 +3,17 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+
+        //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
+        // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
 
-       int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+       //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         System.out.println("Original array: " + Arrays.toString(array));
 
@@ -40,13 +44,13 @@ public class Main {
                 }
             } else {
                 // Array is odd
-                if ((n/2) % 2 == 0) {
+                if ((n/2) % 2 == 0) { // IF Array is odd AND both sides are EVEN
                     // Leaving the middle element intact would result in both sides being even
-                    leftSize = Math.ceilDiv(n, 2);
+                    leftSize = Math.ceilDiv(n, 2); // Ceiling to ignore the middle value
                     rightSize = leftSize;
                 } else {
                     // Leaving the middle element intact would result in both sides being odd
-                    leftSize = Math.ceilDiv(n, 2) + 2;
+                    leftSize = Math.ceilDiv(n, 2) + 1; // +1 to make the left side bigger
                     rightSize = leftSize;
                 }
             }
